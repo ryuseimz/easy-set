@@ -36,5 +36,4 @@ fi
 echo
 echo "Recommended next step:"
 echo "  claude"
-echo "  Then ask Claude to read README.md, CLAUDE.md, AGENTS.md, and docs/quickstart.md."
-
+echo "  Then ask Claude to read START_HERE.md, COURSE.md, CLAUDE.md, and AGENTS.md."

@@ -8,8 +8,7 @@
 
 1. `START_HERE.md`
 2. `COURSE.md`
-3. `SETUP_PROMPT.md`
-4. `AGENTS.md`
+3. `AGENTS.md`
 5. 必要に応じて `docs/` 以下の詳細資料
 
 ## Claude Code Specific Behavior

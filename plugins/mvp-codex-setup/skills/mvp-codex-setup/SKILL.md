@@ -12,13 +12,12 @@ Use this skill when the user says they want to use this course repository to set
 Read these files from the course repo:
 
 1. `COURSE.md`
-2. `SETUP_PROMPT.md`
-3. `templates/mvp-project/AGENTS.md`
-4. `templates/mvp-project/CLAUDE.md`
-5. `templates/mvp-project/codex.config.toml`
-6. `templates/mvp-project/github-ci.yml`
-7. `templates/mvp-project/pull_request_template.md`
-8. `templates/mvp-project/REVIEW_PROMPT.md`
+2. `templates/mvp-project/AGENTS.md`
+3. `templates/mvp-project/CLAUDE.md`
+4. `templates/mvp-project/codex.config.toml`
+5. `templates/mvp-project/github-ci.yml`
+6. `templates/mvp-project/pull_request_template.md`
+7. `templates/mvp-project/REVIEW_PROMPT.md`
 
 ## Goal
 
@@ -84,4 +83,3 @@ Return:
 - review and verification flow
 - commands to run
 - next MVP development prompt
-

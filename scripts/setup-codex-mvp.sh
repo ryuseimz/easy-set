@@ -47,7 +47,6 @@ say "Checking course files"
 
 required_files=(
   "COURSE.md"
-  "SETUP_PROMPT.md"
   "AGENTS.md"
   "CLAUDE.md"
   "templates/mvp-project/AGENTS.md"
@@ -131,4 +130,3 @@ cat <<EOF
 EOF
 
 say "Done"
-

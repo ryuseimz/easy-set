@@ -5,5 +5,3 @@
 非エンジニアの起業家が、Codex と Claude Code を使って MVP 開発に着手し、GitHub と Vercel で公開するための教材です。
 
 まず [START_HERE.md](START_HERE.md) を開いてください。
-
-受講生に最初に渡すプロンプトは [SETUP_PROMPT.md](SETUP_PROMPT.md) です。

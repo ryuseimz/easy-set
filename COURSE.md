@@ -34,30 +34,6 @@
 8. おすすめツールを紹介する
 9. 上級者向けに Claude Code、CLI、Warp、MCP を紹介する
 
-## 受講生が最初に投げるプロンプト
-
-受講生には、この GitHub リポジトリを clone してもらい、[START_HERE.md](START_HERE.md) のプロンプトを Codex または Claude Code に投げてもらいます。
-
-GitHub URL だけを渡す場合は、[SETUP_PROMPT.md](SETUP_PROMPT.md) のプロンプトを使います。
-
-このプロンプトを Codex または Claude Code に投げると、AI が次の内容を返す想定です。
-
-- GitHub / Vercel plugin または MCP 連携の方法
-- Codex の設定方法
-- 対象 MVP repo に追加する `AGENTS.md` / `CLAUDE.md` / `.codex/config.toml`
-- GitHub Actions による lint / test / build の自動確認
-- 実装後にレビューまで回す運用ルール
-- 次に投げる MVP 開発プロンプト
-
-対象 MVP repo へ追加するテンプレートは `templates/mvp-project/` にあります。
-
-この repo には `MVP Codex Setup` plugin も同梱しています。
-
-- marketplace: `.agents/plugins/marketplace.json`
-- plugin: `plugins/mvp-codex-setup/`
-
-Codex が repo-local plugin marketplace を認識する環境では、この plugin からセットアップを進められます。
-
 ## 1. Claude Code デスクトップアプリをインストールする
 
 下記のリンクからダウンロードしてください。

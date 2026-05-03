@@ -2,18 +2,6 @@
 
 非エンジニアの起業家が、Codex と Claude Code を使って MVP 開発に着手し、GitHub と Vercel で公開するための講座資料です。
 
-## この講座のゴール
-
-この講座では、受講者が次の状態になることを目指します。
-
-- Codex デスクトップアプリを使える
-- Claude Code デスクトップアプリを使える
-- Codex に GitHub / Vercel を連携できる
-- Codex に短いプロンプトで MVP 開発を依頼できる
-- Codex の質問に答えながら、企画、実装、確認、GitHub、Vercel 公開まで進められる
-- エラーや画面崩れを AI に伝えて直せる
-- 最新情報を自分で調べ、仲間と共有する姿勢を持てる
-
 ## まず持つべきマインドセット
 
 - 全部 AI に聞く。全部 AI にやらせる。
@@ -26,13 +14,12 @@
 
 1. Claude Code デスクトップアプリをインストールする
 2. Codex デスクトップアプリをインストールする
-3. Codex に GitHub アカウントを連携する
-4. Codex に Vercel アカウントを連携する
-5. Codex に MVP 開発を依頼する
-6. Codex が企画、実装、ローカル確認、GitHub push、Vercel deploy を進める
-7. 受講者は許可画面、確認事項、デプロイ URL をチェックする
-8. おすすめツールを紹介する
-9. 上級者向けに Claude Code、CLI、Warp、MCP を紹介する
+3. Codex に下記のプロンプトを投げる
+4. Codex の案内に従って GitHub / Vercel のログインや認証を進める
+5. Codex に MVP 開発を進めてもらう
+6. 受講者は許可画面、確認事項、デプロイ URL をチェックする
+7. おすすめツールを紹介する
+8. 上級者向けに Claude Code、CLI、Warp、MCP を紹介する
 
 ## 1. Claude Code デスクトップアプリをインストールする
 
@@ -49,163 +36,28 @@
 - Codex getting started: https://openai.com/academy/codex-how-to-start/
 - ChatGPT desktop app: https://chatgpt.com/features/desktop/
 
-## 3. Codex に GitHub / Vercel を連携する
+## 3. Codex に下記のプロンプトを投げる
 
-Codex デスクトップアプリから GitHub と Vercel を連携します。
-
-連携するもの:
-
-- GitHub: リポジトリ作成、commit、push、PR/merge のため
-- Vercel: デプロイ、preview、production 公開のため
-
-注意:
-
-- 連携画面では、必要な権限だけ許可してください
-- 最初の repo は Private 推奨です
-- 講座中は本番課金や本番データを扱わないでください
-
-### ターミナルから連携する場合
-
-Codex CLI を使う場合は、MCP 設定を `~/.codex/config.toml` に入れるか、`codex mcp add` コマンドで追加できます。
-
-Vercel:
-
-```bash
-codex mcp add vercel --url https://mcp.vercel.com
-```
-
-追加時に OAuth が検出されると、ブラウザで Vercel 認可画面が開きます。
-
-GitHub:
-
-```bash
-codex mcp add github --url https://api.githubcopilot.com/mcp/
-```
-
-GitHub は token が必要になる場合があります。`~/.codex/config.toml` に書く場合は、token を直接書かず、環境変数で渡します。
-
-```toml
-[mcp_servers.github]
-url = "https://api.githubcopilot.com/mcp/"
-bearer_token_env_var = "GITHUB_PAT_TOKEN"
-```
-
-Vercel を config に書く場合:
-
-```toml
-[mcp_servers.vercel]
-url = "https://mcp.vercel.com"
-```
-
-確認:
-
-```bash
-codex
-/mcp
-```
-
-注意:
-
-- token は `config.toml` に直書きしない
-- `GITHUB_PAT_TOKEN` は `.env` や shell の環境変数で管理する
-- GitHub token は最小権限にする
-- Vercel は project-specific URL も使える
-
-Vercel project を固定したい場合:
-
-```toml
-[mcp_servers.vercel]
-url = "https://mcp.vercel.com/<teamSlug>/<projectSlug>"
-```
-
-講座では、非エンジニア向けの本編はアプリ UI 連携で進め、詰まった人や上級者向けにこのターミナル連携を紹介します。
-
-### Codex アプリ上で GitHub を連携する流れ
-
-UI 名称は Codex アプリの更新で変わることがあります。
-
-次の場所を探してください。
-
-- 左サイドバー
-- `Settings`
-- `Tools`
-- `Connectors`
-- `Integrations`
-- `Accounts`
-
-手順:
-
-1. Codex デスクトップアプリを起動する
-2. ChatGPT アカウントでサインインする
-3. 左サイドバーを確認する
-4. `Settings` または歯車アイコンを開く
-5. `Connectors`、`Tools`、`Integrations`、または `Accounts` を開く
-6. `GitHub` を選ぶ
-7. `Connect` または `Sign in with GitHub` を押す
-8. ブラウザで GitHub の認可画面が開く
-9. 連携する GitHub アカウントを選ぶ
-10. repo 権限を確認する
-11. 講座では、最初は必要最小限の repo だけ許可する
-12. Codex アプリに戻り、GitHub が `Connected` になっていることを確認する
-
-確認プロンプト:
+Codex デスクトップアプリで、このリポジトリを開いて下記のプロンプトを投げます。
 
 ```text
-GitHub 連携ができているか確認してください。
-新しい private repository を作れる状態か、または既存 repo に push できる状態かを教えてください。
-まだ repo 作成や push はしないでください。
-```
+この GitHub リポジトリを clone して、Codex のセットアップを進めたいです。
 
-### Codex アプリ上で Vercel を連携する流れ
+https://github.com/ryuseimz/easy-set
 
-手順:
+まず START_HERE.md、COURSE.md、AGENTS.md、CLAUDE.md を読んでください。
 
-1. `Settings` を開く
-2. `Connectors`、`Tools`、`Integrations`、または `Accounts` を開く
-3. `Vercel` を選ぶ
-4. `Connect` または `Sign in with Vercel` を押す
-5. ブラウザで Vercel の認可画面が開く
-6. Vercel アカウントまたは team を選ぶ
-7. 許可する scope / team / project を確認する
-8. Codex アプリに戻り、Vercel が `Connected` になっていることを確認する
+やってほしいこと:
+1. 私の環境で足りないものを確認してください
+2. scripts/setup-codex-mvp.sh を使ってセットアップを進めてください
+3. GitHub / Vercel のログインや認証が必要なところだけ、私に操作を依頼してください
+4. GitHub / Vercel plugin または MCP を使える状態にしてください
+5. 対象の MVP リポジトリに templates/mvp-project/ の設定を入れる準備をしてください
+6. コード開発後に review / lint / typecheck / test / build / Vercel deploy 確認が回るようにしてください
 
-確認プロンプト:
+危険な操作、課金、本番データ、外部 API key、public repository 化、production deploy は、実行前に必ず確認してください。
 
-```text
-Vercel 連携ができているか確認してください。
-GitHub repo から新しい Vercel project を作って deploy できる状態か教えてください。
-まだ deploy はしないでください。
-```
-
-### Vercel が Codex アプリ内に見つからない場合
-
-Codex アプリの UI に `Vercel` が見つからない場合は、次のどちらかで進めます。
-
-Codex に接続方法を案内させる:
-
-```text
-Vercel にデプロイしたいです。
-この Codex アプリから Vercel を連携する場所が見つかりません。
-今の UI でどこを開けばよいか案内してください。
-もしアプリ内連携が使えない場合は、Vercel 側で GitHub repo を import する手順を案内してください。
-```
-
-Vercel 側で GitHub repo を import する:
-
-1. https://vercel.com/ を開く
-2. GitHub アカウントでサインインする
-3. `Add New` または `New Project` を押す
-4. GitHub repo を import する
-5. framework / build command / output directory を確認する
-6. `Deploy` を押す
-7. 公開 URL を開いて確認する
-
-この場合も、Codex には次のように頼みます。
-
-```text
-Vercel 側で GitHub repo を import して deploy します。
-このアプリの framework、build command、output directory、必要な環境変数を確認してください。
-Vercel の画面で何を選べばよいか、順番に教えてください。
+まず現在の環境確認から始めてください。
 ```
 
 ## 4. Codex に MVP 開発をまとめて依頼する

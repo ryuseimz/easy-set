@@ -1,0 +1,21 @@
+{
+  "name": "mvp-codex-course",
+  "interface": {
+    "displayName": "MVP Codex Course"
+  },
+  "plugins": [
+    {
+      "name": "mvp-codex-setup",
+      "source": {
+        "source": "local",
+        "path": "./plugins/mvp-codex-setup"
+      },
+      "policy": {
+        "installation": "INSTALLED_BY_DEFAULT",
+        "authentication": "ON_USE"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
+

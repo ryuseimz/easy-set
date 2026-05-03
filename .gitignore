@@ -1,0 +1,11 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+secrets/
+*.log
+codex-mvp-config.suggested.toml
+node_modules/
+.claude/settings.local.json
+.codex/auth.json
+.codex/history.jsonl

@@ -1,0 +1,23 @@
+# Example Codex configuration for this setup repository.
+# Copy relevant parts to ~/.codex/config.toml for personal defaults,
+# or to a trusted project's .codex/config.toml for repo-specific behavior.
+
+model = "gpt-5.5"
+reasoning_effort = "medium"
+sandbox_mode = "workspace-write"
+approval_policy = "on-request"
+project_doc_fallback_filenames = ["CLAUDE.md", "README.md"]
+project_doc_max_bytes = 65536
+
+[sandbox_workspace_write]
+network_access = false
+
+[mcp_servers.context7]
+command = "npx"
+args = ["-y", "@upstash/context7-mcp"]
+
+# Add only when needed for browser exploration.
+# [mcp_servers.playwright]
+# command = "npx"
+# args = ["@playwright/mcp@latest"]
+

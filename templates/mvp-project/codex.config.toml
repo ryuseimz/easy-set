@@ -1,0 +1,26 @@
+# Copy to .codex/config.toml or merge into ~/.codex/config.toml.
+
+model = "gpt-5.5"
+reasoning_effort = "medium"
+sandbox_mode = "workspace-write"
+approval_policy = "on-request"
+project_doc_fallback_filenames = ["CLAUDE.md", "README.md"]
+project_doc_max_bytes = 65536
+
+[sandbox_workspace_write]
+network_access = false
+
+# Optional: Vercel MCP.
+# Add with:
+#   codex mcp add vercel --url https://mcp.vercel.com
+#
+# [mcp_servers.vercel]
+# url = "https://mcp.vercel.com"
+
+# Optional: GitHub MCP.
+# Do not hardcode tokens. Use an environment variable.
+#
+# [mcp_servers.github]
+# url = "https://api.githubcopilot.com/mcp/"
+# bearer_token_env_var = "GITHUB_PAT_TOKEN"
+

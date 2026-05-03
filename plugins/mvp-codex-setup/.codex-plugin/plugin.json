@@ -1,0 +1,39 @@
+{
+  "name": "mvp-codex-setup",
+  "version": "0.1.0",
+  "description": "Set up Codex for non-engineer MVP development with GitHub, Vercel, review rules, and project templates.",
+  "author": {
+    "name": "MVP Codex Course"
+  },
+  "homepage": "https://github.com/",
+  "repository": "https://github.com/",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "mvp",
+    "github",
+    "vercel",
+    "review",
+    "non-engineer"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "MVP Codex Setup",
+    "shortDescription": "Set up Codex, GitHub, Vercel, and review workflows for MVP development",
+    "longDescription": "A course plugin that helps non-engineer founders set up Codex for MVP development. It guides GitHub and Vercel connection, suggests MCP or app plugin setup, copies project templates, and establishes review and verification rules.",
+    "developerName": "MVP Codex Course",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/",
+    "defaultPrompt": [
+      "Set up this MVP repo for Codex",
+      "Connect GitHub and Vercel for this MVP",
+      "Add review rules for Codex development"
+    ],
+    "brandColor": "#0F766E"
+  }
+}
+
